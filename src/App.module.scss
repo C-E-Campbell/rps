@@ -47,13 +47,25 @@
   }
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 3000px) {
+  .container {
+    max-width: 45%;
+  }
   .resultContainer {
     max-width: 70%;
   }
 }
 
+@media (max-width: 1800px) {
+  .container {
+    max-width: 65%;
+  }
+}
+
 @media (max-width: 1400px) {
+  .container {
+    max-width: 65%;
+  }
   .resultContainer {
     max-width: 100%;
   }
@@ -62,6 +74,10 @@
 @media (max-width: 900px) {
   .resetContainer {
     width: 70%;
+  }
+
+  .container {
+    max-width: 95%;
   }
   .resultContainer {
     flex-direction: column;
