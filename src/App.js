@@ -19,6 +19,8 @@ function App() {
     if (gameResult.result) {
       let newScore = score + 1;
       setScore(newScore);
+    } else {
+      setScore(0);
     }
     setGameOver(true);
   };
