@@ -44,7 +44,7 @@ function App() {
       ) : (
         <ButtonContainer play={playGame} />
       )}
-      <button>Rules</button>
+      {/* <button>Rules</button> */}
     </div>
   );
 }
