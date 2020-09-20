@@ -2,6 +2,8 @@
   max-width: 75%;
   margin: 0 auto;
   min-height: 100vh;
+  height: 100vh;
+  padding-top: 2rem;
 }
 
 .resultContainer {
@@ -48,6 +50,24 @@
   }
 }
 
+.rulesBtn {
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  background-color: transparent;
+  border: 1px solid rgb(160, 160, 160);
+  color: rgb(206, 206, 206);
+  border-radius: 2px;
+  padding: 4px 8px;
+  outline: none;
+
+  &:hover {
+    border: 1px solid rgb(231, 231, 231);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 3000px) {
   .container {
     max-width: 45%;
@@ -84,5 +104,11 @@
     flex-direction: column;
     justify-content: space-between;
     height: 60vh;
+  }
+
+  .rulesBtn {
+    position: absolute;
+    right: 4%;
+    bottom: 2%;
   }
 }

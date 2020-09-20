@@ -3,6 +3,8 @@ import Scoreboard from './Components/Scoreboard/Scoreboard';
 import styles from './App.module.scss';
 import ButtonContainer from './Components/ButtonContainer/ButtonContainer';
 import Button from './Components/Buttons/Buttons.js';
+import Rules from './Components/RulesPortal/RulesPortal';
+import RulesSVG from './images/image-rules.svg';
 import { GameLogic } from './playGame';
 function App() {
   const [score, setScore] = useState(0);
@@ -10,6 +12,7 @@ function App() {
   const [myChoice, setMyChoice] = useState('');
   const [gameOver, setGameOver] = useState(false);
   const [result, setResult] = useState(false);
+  const [portalOpen, setPortalOpen] = useState(false);
 
   const playGame = (choice) => {
     let gameResult = GameLogic(choice);
@@ -33,6 +36,10 @@ function App() {
     } else if (house === 3) {
       return 'scissors';
     }
+  };
+
+  const closePortal = () => {
+    setPortalOpen(false);
   };
 
   return (
@@ -112,7 +119,17 @@ function App() {
       ) : (
         <ButtonContainer play={playGame} />
       )}
-      {/* <button>Rules</button> */}
+      {portalOpen ? (
+        <Rules close={closePortal} open={portalOpen}>
+          <img src={RulesSVG} />
+          <h4>Click anywhere to close</h4>
+        </Rules>
+      ) : (
+        ''
+      )}
+      <button onClick={() => setPortalOpen(true)} className={styles.rulesBtn}>
+        Rules
+      </button>
     </div>
   );
 }
