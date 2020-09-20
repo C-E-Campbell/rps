@@ -25,6 +25,7 @@
 }
 .resetBtn {
   width: 100%;
+  max-width: 150px;
   font-size: 1.2rem;
   border-radius: 6px;
   border: none;
@@ -43,5 +44,28 @@
     text-align: center;
     font-weight: 200;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 2000px) {
+  .resultContainer {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .resultContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .resetContainer {
+    width: 70%;
+  }
+  .resultContainer {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
   }
 }
