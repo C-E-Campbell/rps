@@ -2,31 +2,35 @@ import React, { useState } from 'react';
 import Scoreboard from './Components/Scoreboard/Scoreboard';
 import styles from './App.module.scss';
 import ButtonContainer from './Components/ButtonContainer/ButtonContainer';
+import { GameLogic } from './playGame';
 function App() {
   const [score, setScore] = useState(0);
+  const [house, setHouse] = useState('');
+  const [myChoice, setMyChoice] = useState('');
+  const [gameOver, setGameOver] = useState(false);
 
-  const playGame = (logo) => {
-    let myNum;
-    if (logo === 'rock') {
-      myNum = 1;
-    } else if (logo === 'paper') {
-      myNum = 2;
-    } else if ((logo = 'scissors')) {
-      myNum = 3;
-    }
-    let random = Math.floor(Math.random() * Math.floor(3) + 1);
+  const playGame = (choice) => {
+    let gameResult = GameLogic(choice);
+    setHouse(gameResult.houseChoice);
+    setMyChoice(gameResult.myChoice);
 
-    if (myNum === random) {
-      let newScore = score;
-      setScore((newScore += 1));
-    } else {
+    if (gameResult.result) {
+      let newScore = score + 1;
+      setScore(newScore);
     }
+    setGameOver(true);
   };
 
   return (
     <div className={styles.container}>
       <Scoreboard score={score} />
-      <ButtonContainer play={playGame} />
+      {gameOver ? (
+        <div>
+          <button onClick={() => setGameOver(false)}>reset</button>
+        </div>
+      ) : (
+        <ButtonContainer play={playGame} />
+      )}
     </div>
   );
 }
