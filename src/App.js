@@ -121,7 +121,7 @@ function App() {
       )}
       {portalOpen ? (
         <Rules close={closePortal} open={portalOpen}>
-          <img src={RulesSVG} />
+          <img alt='rules' src={RulesSVG} />
           <h4>Click anywhere to close</h4>
         </Rules>
       ) : (
