@@ -12,6 +12,7 @@ export default function Buttons(props) {
       >
         <div className={styles.innerContainer}>
           <img
+            alt='rock paper or scissors'
             src={
               props.logo === 'rock'
                 ? Rock
