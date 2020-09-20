@@ -3,3 +3,45 @@
   margin: 0 auto;
   min-height: 100vh;
 }
+
+.resultContainer {
+  height: 50vh;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.resetContainer {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & h2 {
+    color: #fff;
+  }
+}
+.resetBtn {
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+
+  &:hover {
+    background-color: #fff;
+    cursor: pointer;
+  }
+}
+
+.choiceContainer {
+  color: #fff;
+  & h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 0.9rem;
+  }
+}
