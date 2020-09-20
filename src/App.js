@@ -19,7 +19,7 @@ function App() {
     if (gameResult.result) {
       let newScore = score + 1;
       setScore(newScore);
-    } else {
+    } else if (gameResult.result === false) {
       setScore(0);
     }
     setGameOver(true);
